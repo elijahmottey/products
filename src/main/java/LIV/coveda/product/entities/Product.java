@@ -4,11 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Product {
 
@@ -18,10 +20,10 @@ public class Product {
 
     private String name;
     private String category;
-    private String stock;
+    private int stock;
     private Double price;
 
-    public Product(String name, String category, String stock, Double price) {
+    public Product(String name, String category, int stock, Double price) {
         this.name = name;
         this.category = category;
         this.stock = stock;

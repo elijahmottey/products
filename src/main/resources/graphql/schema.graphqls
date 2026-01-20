@@ -7,6 +7,12 @@ type Product {
 }
 
 type Query {
-    getAllProducts1: [Product]
-    getAllProductsByCategory1(category: String): [Product]
+    getAllProducts1(page: Int, size: Int): [Product]
+    getProductsByCategory1(category: String!, page: Int, size: Int): [Product]
 }
+
+
+#type Mutation{
+#
+#}
+
