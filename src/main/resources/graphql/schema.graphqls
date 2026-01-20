@@ -2,17 +2,28 @@ type Product {
     id: ID
     name: String
     category: String
-    stock: String
+    stock: Int
     price: Float
 }
 
+# Input type for creating products
+input ProductDto {
+    name: String!
+    category: String!
+    stock: Int!
+    price: Float!
+}
+
 type Query {
-    getAllProducts1(page: Int, size: Int): [Product]
-    getProductsByCategory1(category: String!, page: Int, size: Int): [Product]
+    getAllProducts1(page: Int!, size: Int!): [Product]
+    getProductsByCategory1(category: String!, page: Int!, size: Int!): [Product]
 }
 
 
-#type Mutation{
-#
-#}
+
+type Mutation {
+    addProduct(input: ProductDto!): Product!
+    updateProductStock(productId: ID!, quantity: Int!): Product!
+    updateNewShipment(productId: ID!, quantity: Int!): Product!
+}
 

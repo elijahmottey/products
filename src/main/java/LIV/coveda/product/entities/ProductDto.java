@@ -4,7 +4,7 @@ public record ProductDto(
         int id,
         String name,
         String category,
-        int stock,
+        Integer stock,
         double price
 ) {
 }
