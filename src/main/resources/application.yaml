@@ -2,6 +2,11 @@ spring:
   application:
     name: product
 
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+
 
   datasource:
     password: love
@@ -13,10 +18,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+
     properties:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
           format_sql: true
       database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
 
